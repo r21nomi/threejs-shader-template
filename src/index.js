@@ -57,10 +57,9 @@ const render = () => {
 };
 
 const onResize = () => {
-    setSize(getWindowSize().w, getWindowSize().h);
-};
+    const width = getWindowSize().w;
+    const height = getWindowSize().h;
 
-const setSize = (width, height) => {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
@@ -74,10 +73,10 @@ const getPositionAndSize = (vertexIndex) => {
     const windowSize = getWindowSize();
     const w = windowSize.w - PADDING * 2;
     const h = windowSize.h - PADDING * 2;
-    const _x = -windowSize.w / 2;
-    const _y = -windowSize.h / 2;
-    const x = (vertexIndex === 0 || vertexIndex === 3) ? _x + PADDING : _x + w - PADDING;
-    const y = (vertexIndex === 0 || vertexIndex === 1) ? _y + PADDING : _y + h - PADDING;
+    const originX = -windowSize.w / 2;
+    const originY = -windowSize.h / 2;
+    const x = (vertexIndex === 0 || vertexIndex === 3) ? originX + PADDING : originX + PADDING + w;
+    const y = (vertexIndex === 0 || vertexIndex === 1) ? originY + PADDING : originY + PADDING + h;
     const z = 0;
 
     return {

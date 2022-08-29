@@ -14,8 +14,7 @@ varying vec2 vResolution;
 
 void main() {
     vUv = uv;
-    // Actual resolution of rect by vertex with padding.
-    vResolution = vec2(size.x - padding.x, size.y - padding.y);
+    vResolution = vec2(size.x, size.y);
 
     vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
     gl_Position = projectionMatrix * mvPosition;
