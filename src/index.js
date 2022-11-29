@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import OrbitControls from "three-orbitcontrols";
-const vertexShader = require('webpack-glsl-loader!./shader/vertexShader.vert');
-const fragmentShader = require('webpack-glsl-loader!./shader/fragmentShader.frag');
+import vertexShader from './shader/vertexShader.vert'
+import fragmentShader from './shader/fragmentShader.frag'
 
 const clock = new THREE.Clock();
 const scene = new THREE.Scene();
